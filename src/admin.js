@@ -40,7 +40,6 @@ const Wrapper = styled.div`
     width: 15%;
     min-width: 180px;
     height: 100vh;
-    background-color: pink;
   }
   .content {
     padding: ${themeConfig["@space-base"]};

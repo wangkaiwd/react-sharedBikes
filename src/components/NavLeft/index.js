@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
-import styled from 'styled-components'
-import menuConfig from '@/config/menuConfig'
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import menuConfig from '@/config/menuConfig';
+import '@/styles/reset.less';
 import { Menu, Icon } from 'antd';
 
 const SubMenu = Menu.SubMenu;
@@ -43,6 +44,11 @@ class NavLeft extends Component {
   render() {
     return (
       <Wrapper>
+        <Logo>
+          {/* 最终源码打包后会生成到public目录下，public下面的源码会部署到服务器上 */}
+          <img src="/assets/images/logo-ant.svg" alt="" />
+          <h1>wk admin</h1>
+        </Logo>
         <Menu onClick={this.handleClick} theme="dark">
           {this.createLeftMenus(menuConfig)}
         </Menu>
@@ -53,8 +59,13 @@ class NavLeft extends Component {
 export default NavLeft
 const Wrapper = styled.div`
   height: 100%;
+  display: flex;
+  flex-direction: column;
   .ant-menu {
-    height: 100%;
+    flex: 1;
     width: 100%;
   }
+`
+const Logo = styled.div`
+
 `
