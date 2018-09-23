@@ -22,7 +22,7 @@ class Admin extends Component {
             <Header></Header>
             <Row className="content">
               content
-          </Row>
+            </Row>
             <Footer></Footer>
           </Col>
         </Row>

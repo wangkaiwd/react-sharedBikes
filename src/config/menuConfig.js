@@ -10,6 +10,10 @@ const menuList = [
       {
         title: '按钮',
         key: '/ui/buttons',
+        children: [
+          { title: '简单按钮', key: '/ui/buttons/jd' },
+          { title: '复杂按钮', key: '/ui/buttons/fz' }
+        ]
       },
       {
         title: '弹框',

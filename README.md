@@ -110,7 +110,7 @@
       },
     }
     ```
-3. 通过`styled-component`来书写样式  
+3. 通过`styled-component`来书写样式：防止`css`样式冲突  
    最简单的一个例子
     ```js
     import React, { Component } from 'react'
