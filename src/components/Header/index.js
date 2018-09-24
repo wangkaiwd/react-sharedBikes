@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import styled from 'styled-components'
 import { formateDate } from '@/utils/utils'
+import Axios from '@/http/axios'
 class Header extends Component {
   constructor() {
     super()
@@ -11,10 +12,19 @@ class Header extends Component {
     }
   }
   componentDidMount = () => {
+    this.getSystemTime();
+    this.weatherApiData();
+  }
+  getSystemTime = () => {
     setInterval(() => {
       const sysTime = formateDate(new Date())
       this.setState({ sysTime })
     }, 1000)
+  }
+  weatherApiData = () => {
+    let city = '杭州' // 地址中出现中文要进行一个编码
+    Axios.jsonp(`http://api.map.baidu.com/telematics/v3/weather?location=${encodeURI(city)}&output=json&ak=3p49MVra6urFRGOT9s8UBWr2`, {})
+      .then(res => console.log(res))
   }
   render() {
     const { userNmae, sysTime } = this.state;
