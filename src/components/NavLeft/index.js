@@ -12,6 +12,11 @@ class NavLeft extends Component {
 
     }
   }
+  componentDidMount = () => {
+    // 这样生成侧边栏会节省性能，而不用每次都在render的时候执行函数
+    const menuTreeNode = this.createLeftMenus(menuConfig)
+    this.setState({ menuTreeNode })
+  }
   handleClick = (e) => {
     console.log('click', e);
   }
@@ -50,7 +55,9 @@ class NavLeft extends Component {
           <h1>wk admin</h1>
         </Logo>
         <Menu onClick={this.handleClick} theme="dark">
-          {this.createLeftMenus(menuConfig)}
+          {/* 在每次render的时候都要执行函数，影响性能 */}
+          {/* {this.createLeftMenus(menuConfig)} */}
+          {this.state.menuTreeNode}
         </Menu>
       </Wrapper>
     )
@@ -67,5 +74,11 @@ const Wrapper = styled.div`
   }
 `
 const Logo = styled.div`
-
+  padding: ${themeConfig["@space-base"]};
+  display: flex;
+  font-size: ${themeConfig["@font-size-lg"]};
+  align-items: center;
+  background-color: #001529;
+  img { height: 35px; }
+  h1 { margin-left: ${themeConfig["@space-base"]}; color: ${themeConfig["@white"]};}
 `
