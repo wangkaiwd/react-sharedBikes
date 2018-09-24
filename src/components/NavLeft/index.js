@@ -13,7 +13,7 @@ class NavLeft extends Component {
     }
   }
   componentDidMount = () => {
-    // 这样生成侧边栏会节省性能，而不用每次都在render的时候执行函数
+    // 这样生成侧边栏会节省性能，只是在每次DOM加载完成后进行渲染，而不用每次都在render的时候执行函数
     const menuTreeNode = this.createLeftMenus(menuConfig)
     this.setState({ menuTreeNode })
   }
