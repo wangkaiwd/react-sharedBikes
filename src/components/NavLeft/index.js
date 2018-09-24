@@ -78,7 +78,7 @@ const Logo = styled.div`
   display: flex;
   font-size: ${themeConfig["@font-size-lg"]};
   align-items: center;
-  background-color: #001529;
+  background-color: ${themeConfig["@green-logo"]};
   img { height: 35px; }
   h1 { margin-left: ${themeConfig["@space-base"]}; color: ${themeConfig["@white"]};}
 `

@@ -7,8 +7,13 @@ const themeConfig = {
   // 字体配置
   '@font-size-lg': '20px',
 
+  // 主色
+  '@primary-color': '#1890ff',
+
   // 标准色
   '@white': '#fff',
+  '@green': '#001529',
+  '@green-logo': '#002140',
 }
 
 window.themeConfig = themeConfig
