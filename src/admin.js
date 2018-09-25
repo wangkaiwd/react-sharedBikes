@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import NavLeft from '@/components/NavLeft'
+import Home from '@/pages/home'
 class Admin extends Component {
   constructor() {
     super()
@@ -20,8 +21,10 @@ class Admin extends Component {
           </Col>
           <Col span="20" className="main">
             <Header></Header>
-            <Row className="content">
-              content
+            <Row className="content-wrapper">
+              <div className="content">
+                <Home></Home>
+              </div>
             </Row>
             <Footer></Footer>
           </Col>
@@ -41,10 +44,14 @@ const Wrapper = styled.div`
     min-width: 180px;
     height: 100vh;
   }
+  .content-wrapper {
+    padding: ${themeConfig["@space-lg"]};
+  }
   .content {
-    padding: ${themeConfig["@space-base"]};
+    background-color: ${themeConfig["@white"]};
   }
   .main {
     flex: 1;
+    background-color: ${themeConfig["@gray"]};
   }
 `

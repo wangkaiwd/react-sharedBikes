@@ -14,6 +14,8 @@ const themeConfig = {
   '@white': '#fff',
   '@green': '#001529',
   '@green-logo': '#002140',
+  '@gray-footer': '#d7d7d7',
+  '@gray': '#f1f3f5'
 }
 
 window.themeConfig = themeConfig
