@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import menuConfig from '@/config/menuConfig';
-import '@/styles/reset.less';
-import { Menu, Icon } from 'antd';
+import React, { Component } from 'react'
+import styled from 'styled-components'
+import menuConfig from '@/config/menuConfig'
+import '@/styles/reset.less'
+import { Menu, Icon } from 'antd'
 
-const SubMenu = Menu.SubMenu;
+const SubMenu = Menu.SubMenu
 class NavLeft extends Component {
   constructor() {
     super()
-    this.state = {
-
-    }
+    this.state = {}
   }
   componentDidMount = () => {
     // 这样生成侧边栏会节省性能，只是在每次DOM加载完成后进行渲染，而不用每次都在render的时候执行函数
     const menuTreeNode = this.createLeftMenus(menuConfig)
     this.setState({ menuTreeNode })
   }
-  handleClick = (e) => {
-    console.log('click', e);
+  handleClick = e => {
+    console.log('click', e)
   }
 
   // 生成左侧菜单
-  createLeftMenus = (subMenu) => {
+  createLeftMenus = subMenu => {
     return subMenu.map(subMenuTree => {
       if (subMenuTree.children) {
         return this.subMenusTree(subMenuTree)
@@ -30,20 +28,23 @@ class NavLeft extends Component {
       return this.menusTree(subMenuTree)
     })
   }
-  subMenusTree = (subMenuTree) => {
-    return (<SubMenu key={subMenuTree.key} title={
-      <span>
-        {subMenuTree.icon && <Icon type={subMenuTree.icon} />}
-        <span>{subMenuTree.title}</span>
-      </span>
-    }>
-      {this.createLeftMenus(subMenuTree.children)}
-    </SubMenu>)
+  subMenusTree = subMenuTree => {
+    return (
+      <SubMenu
+        key={subMenuTree.key}
+        title={
+          <span>
+            {subMenuTree.icon && <Icon type={subMenuTree.icon} />}
+            <span>{subMenuTree.title}</span>
+          </span>
+        }
+      >
+        {this.createLeftMenus(subMenuTree.children)}
+      </SubMenu>
+    )
   }
-  menusTree = (menuTree) => (
-    <Menu.Item key={menuTree.key}>
-      {menuTree.title}
-    </Menu.Item>
+  menusTree = menuTree => (
+    <Menu.Item key={menuTree.key}>{menuTree.title}</Menu.Item>
   )
 
   render() {
@@ -54,7 +55,7 @@ class NavLeft extends Component {
           <img src="/assets/images/logo-ant.svg" alt="" />
           <h1>wk admin</h1>
         </Logo>
-        <Menu onClick={this.handleClick} theme="dark">
+        <Menu onClick={this.handleClick} theme="light">
           {/* 在每次render的时候都要执行函数，影响性能 */}
           {/* {this.createLeftMenus(menuConfig)} */}
           {this.state.menuTreeNode}
@@ -74,11 +75,16 @@ const Wrapper = styled.div`
   }
 `
 const Logo = styled.div`
-  padding: ${themeConfig["@space-base"]};
+  padding: ${themeConfig['@space-base']};
   display: flex;
-  font-size: ${themeConfig["@font-size-lg"]};
+  font-size: ${themeConfig['@font-size-lg']};
   align-items: center;
-  background-color: ${themeConfig["@green-logo"]};
-  img { height: 35px; }
-  h1 { margin-left: ${themeConfig["@space-base"]}; color: ${themeConfig["@white"]};}
+  background-color: ${themeConfig['@green-logo']};
+  img {
+    height: 35px;
+  }
+  h1 {
+    margin-left: ${themeConfig['@space-base']};
+    color: ${themeConfig['@white']};
+  }
 `
