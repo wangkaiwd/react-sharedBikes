@@ -4,8 +4,8 @@ import '@/styles/var'
 import '@/styles/mixins'
 import Admin from './admin'
 import RouteExample from '@/pages/demo/route1'
-import Theme from '@/pages/demo/themeChange'
+import IRouter from '@/pages/demo/router'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<Admin />, document.getElementById('root'));
+ReactDOM.render(<IRouter />, document.getElementById('root'));
 registerServiceWorker();

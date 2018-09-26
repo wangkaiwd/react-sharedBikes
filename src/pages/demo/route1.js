@@ -22,7 +22,7 @@ const BasicExample = () => (
       <Switch>
         {/* exact:准确的，加了这个属性之后相当与精准匹配 */}
         {/* 根路径会一直匹配 */}
-        <Route path="/" component={Home} />
+        <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
         <Route path="/topics" component={Topics} />
       </Switch>
