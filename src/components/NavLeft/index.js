@@ -16,7 +16,7 @@ class NavLeft extends Component {
     this.setState({ menuTreeNode })
   }
   handleClick = e => {
-    console.log('click', e)
+    // console.log('click', e)
   }
 
   // 生成左侧菜单
@@ -55,7 +55,7 @@ class NavLeft extends Component {
           <img src="/assets/images/logo-ant.svg" alt="" />
           <h1>wk admin</h1>
         </Logo>
-        <Menu onClick={this.handleClick} theme="light">
+        <Menu onClick={this.handleClick} theme="dark">
           {/* 在每次render的时候都要执行函数，影响性能 */}
           {/* {this.createLeftMenus(menuConfig)} */}
           {this.state.menuTreeNode}

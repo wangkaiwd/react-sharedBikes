@@ -40,7 +40,6 @@ class Theme extends Component {
     this.state = {}
   }
   changeColor = color => {
-    console.log(color)
     window.less.modifyVars({
       '@primary-color': color,
       '@link-color': color,
