@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import menuConfig from '@/config/menuConfig'
-import '@/styles/reset.less'
 import { Menu, Icon } from 'antd'
 
 const SubMenu = Menu.SubMenu
@@ -44,7 +44,9 @@ class NavLeft extends Component {
     )
   }
   menusTree = menuTree => (
-    <Menu.Item key={menuTree.key}>{menuTree.title}</Menu.Item>
+    <Menu.Item key={menuTree.key}>
+      <Link to={menuTree.key}>{menuTree.title}</Link>
+    </Menu.Item>
   )
 
   render() {

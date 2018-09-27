@@ -40,6 +40,7 @@ export default () => (
       <Switch>
         <Route path="/app" render={() => (
           <Home>
+            {/* 嵌套路由 */}
             <Route path="/app/home" component={Main} />
           </Home>
         )} />

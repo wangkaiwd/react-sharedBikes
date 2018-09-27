@@ -7,26 +7,26 @@ import NavLeft from '@/components/NavLeft'
 import Home from '@/pages/home'
 
 class Admin extends Component {
-  constructor () {
+  constructor() {
     super()
     this.state = {}
   }
 
-  render () {
+  render() {
     return (
       <Wrapper>
         <Row className="admin">
           <Col span="4" className="nav-left">
-            <NavLeft/>
+            <NavLeft />
           </Col>
           <Col span="20" className="main">
-            <Header/>
+            <Header />
             <Row className="content-wrapper">
               <div className="content">
-                <Home/>
+                {this.props.children}
               </div>
             </Row>
-            <Footer/>
+            <Footer />
           </Col>
         </Row>
       </Wrapper>
