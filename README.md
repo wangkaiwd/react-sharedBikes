@@ -132,6 +132,6 @@
    `
    ```
 
-## 切换主题
+## [切换主题](http://www.react-china.org/t/antd/25833)
 
 - `color.less`中在代码底部有会有一些全局样式，引入`index.html`中成为行内样式，会覆盖调一些自己定义或者`ant design`中定义的样式
