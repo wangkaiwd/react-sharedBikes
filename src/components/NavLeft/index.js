@@ -15,9 +15,6 @@ class NavLeft extends Component {
     const menuTreeNode = this.createLeftMenus(menuConfig)
     this.setState({ menuTreeNode })
   }
-  handleClick = e => {
-    // console.log('click', e)
-  }
 
   // 生成左侧菜单
   createLeftMenus = subMenu => {
