@@ -3,7 +3,7 @@ import { Route, Switch } from 'react-router-dom'
 import Admin from '../admin'
 import Home from '@/pages/home'
 import NoMatch from '@/pages/noMatch'
-import IButton from '@/pages/ui/button'
+import IButton from '@/pages/ui/buttons'
 export default () => (
   <Admin>
     {/* Switch:只要匹配到对应的路径，就不会继续再往下匹配了 */}

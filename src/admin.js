@@ -13,7 +13,7 @@ class Admin extends Component {
 
   render() {
     return (
-      <Wrapper>
+      <Wrapper primary>
         <Row className="admin">
           <Col span="4" className="nav-left">
             <NavLeft />
