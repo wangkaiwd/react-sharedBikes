@@ -41,5 +41,5 @@ const Wrapper = styled.div`
     height: 100vh;
   }
   .content-wrapper { padding: ${themeConfig['@space-lg']}; }
-  .main { flex: 1; background-color: ${themeConfig['@gray']}; }
+  .main { flex: 1; height: 100vh; background-color: ${themeConfig['@gray']};overflow: scroll;}
 `
