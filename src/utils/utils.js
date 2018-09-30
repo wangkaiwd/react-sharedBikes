@@ -3,7 +3,7 @@
  * @param {String} time 时间戳
  * @returns {String} result 返回的时间格式：例：2018-08-02 20:18:20
  */
-export const formateDate = time => {
+export const formatDate = time => {
   const handleZero = num => {
     if (num < 10) {
       return '0' + num

@@ -1,5 +1,6 @@
 import React from 'react'
-export default ({ children }) => (
+
+export default ({children}) => (
   <div>
     {children}
   </div>

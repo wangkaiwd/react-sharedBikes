@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'antd'
 import styled from 'styled-components'
-import { formateDate } from '@/utils/utils'
+import { formatDate } from '@/utils/utils'
 import Axios from '@/http/axios'
 class Header extends Component {
   constructor() {
     super()
     this.state = {
       userNmae: 'wangkaiwd',
-      sysTime: formateDate(new Date()),
+      sysTime: formatDate(new Date()),
       weatherData: {}
     }
   }
@@ -18,7 +18,7 @@ class Header extends Component {
   }
   getSystemTime = () => {
     setInterval(() => {
-      const sysTime = formateDate(new Date())
+      const sysTime = formatDate(new Date())
       this.setState({ sysTime })
     }, 1000)
   }
